@@ -1,0 +1,10 @@
+ 	PID    PPID CMD                         %MEM %CPU
+      1       0 /usr/lib/systemd/systemd --  1.7  0.0
+      2       0 [kthreadd]                   0.0  0.0
+      3       2 [rcu_gp]                     0.0  0.0
+      4       2 [rcu_par_gp]                 0.0  0.0
+      5       2 [slub_flushwq]               0.0  0.0
+      6       2 [netns]                      0.0  0.0
+      8       2 [kworker/0:0H-events_highpr  0.0  0.0
+     10       2 [mm_percpu_wq]               0.0  0.0
+     11       2 [rcu_tasks_kthread]          0.0  0.0
