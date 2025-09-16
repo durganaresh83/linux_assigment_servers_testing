@@ -79,25 +79,25 @@ sudo bash -c "ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head > /var/log/sysmo
 Add cron jobs (example, runs every hour):
 
 . Create a script as sysmonitor_logs.sh
-#!/bin/bash
-TIMESTAMP=$(date +'%F_%T')
-
-htop -b -n 1 > /var/log/sysmonitor/htop_hourly_${TIMESTAMP}.log
-df -h > /var/log/sysmonitor/df_hourly_${TIMESTAMP}.log
-ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head > /var/log/sysmonitor/topcpu_hourly_${TIMESTAMP}.log
-
-chmod +x sysmonitor_logs.sh
-
-edit crontab -e and add the below command
-0 * * * * /usr/local/bin/sysmonitor_logs.sh - it will run every hour
-*/15 * * * * /usr/local/bin/sysmonitor_logs.sh - it will run every 15mins
+    #!/bin/bash
+    TIMESTAMP=$(date +'%F_%T')
+    
+    htop -b -n 1 > /var/log/sysmonitor/htop_hourly_${TIMESTAMP}.log
+    df -h > /var/log/sysmonitor/df_hourly_${TIMESTAMP}.log
+    ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head > /var/log/sysmonitor/topcpu_hourly_${TIMESTAMP}.log
+    
+    chmod +x sysmonitor_logs.sh
+    
+    edit crontab -e and add the below command
+    0 * * * * /usr/local/bin/sysmonitor_logs.sh - it will run every hour
+    */15 * * * * /usr/local/bin/sysmonitor_logs.sh - it will run every 15mins
 
 # OUTPUT files are added to Task1 folder
-below are the file names
+Below are the file names
 
-. top_cpu_processes_2025-09-16_15-01-26.log
-. df_hourly_2025-09-16_15\-34\-19.log
-. **htop hourly report generated empty file and tried for 10mins as well but not generated empty file**
+    . top_cpu_processes_2025-09-16_15-01-26.log
+    . df_hourly_2025-09-16_15\-34\-19.log
+    . **htop hourly report generated empty file and tried for 10mins as well but not generated empty file**
 
 
 
