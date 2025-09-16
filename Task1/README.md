@@ -79,6 +79,7 @@ sudo bash -c "ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head > /var/log/sysmo
 Add cron jobs (example, runs every hour):
 
 . Create a script as sysmonitor_logs.sh
+
     #!/bin/bash
     TIMESTAMP=$(date +'%F_%T')
     
